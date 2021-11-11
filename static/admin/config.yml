@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: tonn1o/blog
+  repo: tonn1o/tonnio.dev
   branch: main
 media_folder: static/assets
 public_folder: /assets
