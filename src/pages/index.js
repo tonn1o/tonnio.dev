@@ -1,11 +1,16 @@
-import * as React from "react"
+import "../styles/global.css";
+import "../styles/fonts.css";
+
+import * as React from "react";
+import Layout from "../components/layout";
+import { BlogList } from "../components/blog-list";
 
 const IndexPage = () => {
   return (
-      <main>
-        Welcome! I'm currently working on the website. So there's nothing to see here so far :D
-      </main>
-  )
-}
+    <Layout>
+      <BlogList />
+    </Layout>
+  );
+};
 
-export default IndexPage
+export default IndexPage;
