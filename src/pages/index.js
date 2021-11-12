@@ -1,5 +1,4 @@
-import "../styles/global.css";
-import "../styles/fonts.css";
+
 
 import * as React from "react";
 import Layout from "../components/layout";
