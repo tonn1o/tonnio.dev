@@ -5,7 +5,7 @@ import styled from "styled-components";
 import HorizontalSeparator from "./horizontal-separator";
 
 const Wrapper = styled.div`
-  margin-top: 64px;
+  width: 100%;
 `;
 
 export const BlogList = () => {

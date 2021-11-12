@@ -6,7 +6,7 @@ import { Link } from "gatsby";
 const Wrapper = styled.div`
   display: flex;
   padding-top: 16px;
-  align-items: center;
+  align-items: flex-end;
 `;
 
 const Nav = styled.div`
@@ -17,6 +17,15 @@ const Logo = styled.img`
   height: 30px;
 `;
 
+const NavLink = styled(Link)`
+  text-transform: lowercase;
+  text-decoration: none;
+  color: #292929;
+  font-weight: 500;
+  font-size: 18px;
+  
+`;
+
 const Header = () => {
   return (
     <Wrapper>
@@ -24,9 +33,9 @@ const Header = () => {
         <Logo src={logo} alt="logo" />
       </Link>
 
-      {/*<Nav>*/}
-      {/*  <Link to={"/about"}>About</Link>*/}
-      {/*</Nav>*/}
+      <Nav>
+        <NavLink to={"/about"}>About</NavLink>
+      </Nav>
     </Wrapper>
   );
 };
