@@ -21,6 +21,7 @@ module.exports = {
     {
       resolve: "gatsby-plugin-mdx",
       options: {
+        extensions: [".mdx", ".md"],
         gatsbyRemarkPlugins: [
           {
             resolve: `gatsby-remark-images`,
@@ -28,6 +29,13 @@ module.exports = {
               maxWidth: 1035,
               sizeByPixelDensity: true,
             },
+          },
+          {
+            resolve: `gatsby-remark-highlight-code`,
+            options: {
+              terminal: "carbon",
+              theme: "dracula",
+            }
           },
         ],
       },

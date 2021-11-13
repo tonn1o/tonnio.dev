@@ -3,6 +3,9 @@ import { graphql } from "gatsby";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import Layout from "../components/layout";
 import styled from "styled-components";
+import { defineCustomElements as deckDeckGoHighlightElement } from "@deckdeckgo/highlight-code/dist/loader";
+
+deckDeckGoHighlightElement();
 
 const Header = styled.div`
   text-align: center;
