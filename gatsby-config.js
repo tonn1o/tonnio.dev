@@ -56,19 +56,5 @@ module.exports = {
       },
       __key: "pages",
     },
-    {
-      resolve: "gatsby-plugin-favicons",
-      options: {
-        logo: "./src/images/favicon.svg",
-        appName: "Tonnio Blog",
-        background: "#fff",
-        icons: {
-          android: true,
-          appleIcon: true,
-          appleStartup: true,
-          favicons: true,
-        },
-      },
-    },
   ],
 };

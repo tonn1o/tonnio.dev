@@ -4,6 +4,7 @@ import { MDXRenderer } from "gatsby-plugin-mdx";
 import Layout from "../components/layout";
 import styled from "styled-components";
 import { defineCustomElements as deckDeckGoHighlightElement } from "@deckdeckgo/highlight-code/dist/loader";
+import { Helmet } from "react-helmet";
 
 deckDeckGoHighlightElement();
 
@@ -58,21 +59,24 @@ const Body = styled.div`
 
 const BlogPost = ({ data }) => {
   return (
-    <Layout>
-      <Wrapper>
-        <Header>
-          <Title>{data.mdx.frontmatter.title}</Title>
+    <>
+      <Helmet title={data.mdx.frontmatter.title} />
+      <Layout>
+        <Wrapper>
+          <Header>
+            <Title>{data.mdx.frontmatter.title}</Title>
 
-          <Info>
-            {data.mdx.frontmatter.date} | {data.mdx.timeToRead}
-            {data.mdx.timeToRead > 1 ? "mins" : "min"} to read
-          </Info>
-        </Header>
-        <Body>
-          <MDXRenderer>{data.mdx.body}</MDXRenderer>
-        </Body>
-      </Wrapper>
-    </Layout>
+            <Info>
+              {data.mdx.frontmatter.date} | {data.mdx.timeToRead}
+              {data.mdx.timeToRead > 1 ? "mins" : "min"} to read
+            </Info>
+          </Header>
+          <Body>
+            <MDXRenderer>{data.mdx.body}</MDXRenderer>
+          </Body>
+        </Wrapper>
+      </Layout>
+    </>
   );
 };
 

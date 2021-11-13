@@ -10,6 +10,7 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { appConsts } from "../constants/constants";
 import avatar from "../images/avatar.jpg";
+import { Helmet } from "react-helmet";
 
 const Wrapper = styled.div`
   margin-top: 96px;
@@ -61,38 +62,38 @@ const SocialLink = styled.a`
 
 const About = () => {
   return (
-    <Layout>
-      <Wrapper>
-        <PersonalInfo>
-          <Avatar
-            src={avatar}
-            alt="Toni Babenko"
-          />
+    <>
+      <Helmet title="about" />
+      <Layout>
+        <Wrapper>
+          <PersonalInfo>
+            <Avatar src={avatar} alt="Toni Babenko" />
 
-          <Text>
-            personal blog by <b>Toni Babenko</b>
-          </Text>
-        </PersonalInfo>
+            <Text>
+              personal blog by <b>Toni Babenko</b>
+            </Text>
+          </PersonalInfo>
 
-        <Socials>
-          <SocialLink href={appConsts.externalLinks.medium} target="_blank">
-            <FontAwesomeIcon icon={faMedium} />
-          </SocialLink>
-          <SocialLink
-            href={appConsts.externalLinks.stackOverflow}
-            target="_blank"
-          >
-            <FontAwesomeIcon icon={faStackOverflow} />
-          </SocialLink>
-          <SocialLink href={appConsts.externalLinks.linkedIn} target="_blank">
-            <FontAwesomeIcon icon={faLinkedin} />
-          </SocialLink>
-          <SocialLink href={appConsts.externalLinks.github} target="_blank">
-            <FontAwesomeIcon icon={faGithub} />
-          </SocialLink>
-        </Socials>
-      </Wrapper>
-    </Layout>
+          <Socials>
+            <SocialLink href={appConsts.externalLinks.medium} target="_blank">
+              <FontAwesomeIcon icon={faMedium} />
+            </SocialLink>
+            <SocialLink
+              href={appConsts.externalLinks.stackOverflow}
+              target="_blank"
+            >
+              <FontAwesomeIcon icon={faStackOverflow} />
+            </SocialLink>
+            <SocialLink href={appConsts.externalLinks.linkedIn} target="_blank">
+              <FontAwesomeIcon icon={faLinkedin} />
+            </SocialLink>
+            <SocialLink href={appConsts.externalLinks.github} target="_blank">
+              <FontAwesomeIcon icon={faGithub} />
+            </SocialLink>
+          </Socials>
+        </Wrapper>
+      </Layout>
+    </>
   );
 };
 

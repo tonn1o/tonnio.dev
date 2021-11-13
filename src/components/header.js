@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import logo from "../images/logo-2.svg";
+import logo from "../images/logo.svg";
 import { Link } from "gatsby";
 
 const Wrapper = styled.div`
@@ -23,9 +23,9 @@ const NavLink = styled(Link)`
   font-weight: 500;
   font-size: 20px;
   color: ${(props) => props.theme.colors.text};
-  
+
   &:hover {
-    opacity: .7;
+    opacity: 0.7;
   }
 `;
 

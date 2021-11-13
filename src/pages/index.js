@@ -1,14 +1,16 @@
-
-
 import * as React from "react";
 import Layout from "../components/layout";
 import { BlogList } from "../components/blog-list";
+import {Helmet} from "react-helmet";
 
 const IndexPage = () => {
   return (
-    <Layout>
-      <BlogList />
-    </Layout>
+    <>
+      <Helmet title="tonnio" />
+      <Layout>
+        <BlogList />
+      </Layout>
+    </>
   );
 };
 

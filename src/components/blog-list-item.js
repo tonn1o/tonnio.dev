@@ -8,7 +8,7 @@ const Info = styled.div`
   margin: 24px 0 8px;
   font-weight: 600;
   font-size: 14px;
-  color: ${(props) => props.theme.colors.accent};
+  color: ${(props) => props.theme.colors.text};
 `;
 
 const Title = styled.div`
@@ -33,7 +33,7 @@ const UnderlinedText = styled.span`
     bottom: 5px;
     width: 0;
     height: 2px;
-    background: ${(props) => props.theme.colors.accent};
+    background: ${(props) => props.theme.colors.text};
     transition: width 0.4s ease;
   }
 `;
