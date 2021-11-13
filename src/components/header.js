@@ -20,10 +20,8 @@ const Logo = styled.img`
 const NavLink = styled(Link)`
   text-transform: lowercase;
   text-decoration: none;
-  color: #292929;
   font-weight: 500;
   font-size: 18px;
-  
 `;
 
 const Header = () => {

@@ -13,7 +13,6 @@ const Info = styled.div`
 const Title = styled.div`
   font-size: 32px;
   font-weight: 400;
-  color: #292929;
 `;
 
 const Description = styled.div`
@@ -39,7 +38,6 @@ const Wrapper = styled(Link)`
   min-height: 160px;
   display: flex;
   flex-direction: column;
-  color: #292929;
   text-decoration: none;
   position: relative;
 

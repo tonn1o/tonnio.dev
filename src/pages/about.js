@@ -1,7 +1,6 @@
 import React from "react";
 import Layout from "../components/layout";
 import styled from "styled-components";
-import avatar from "../images/avatar.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faGithub,
@@ -9,13 +8,15 @@ import {
   faMedium,
   faStackOverflow,
 } from "@fortawesome/free-brands-svg-icons";
+import { appConsts } from "../constants";
+import { GatsbyImage, getImage, StaticImage } from "gatsby-plugin-image";
+import { graphql, useStaticQuery } from "gatsby";
 
 const Wrapper = styled.div`
   margin-top: 96px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: #292929;
   flex: 1;
 `;
 
@@ -29,7 +30,7 @@ const PersonalInfo = styled.div`
   top: -68px;
 `;
 
-const Avatar = styled.img`
+const Avatar = styled(GatsbyImage)`
   border-radius: 50%;
   width: 50%;
   max-width: 250px;
@@ -60,27 +61,50 @@ const SocialLink = styled.a`
 `;
 
 const About = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      file(relativePath: { eq: "avatar.jpg" }) {
+        childImageSharp {
+          gatsbyImageData(
+            width: 250
+            placeholder: BLURRED
+            layout: FIXED
+            quality: 100
+          )
+        }
+      }
+    }
+  `);
+
+  const image = getImage(data.file);
+
   return (
     <Layout>
       <Wrapper>
         <PersonalInfo>
-          <Avatar src={avatar} />
+          <Avatar
+            image={image}
+            alt="That's my photo here. I look kinda weirdo here."
+          />
           <Text>
             personal blog by <b>Toni Babenko</b>
           </Text>
         </PersonalInfo>
 
         <Socials>
-          <SocialLink>
+          <SocialLink href={appConsts.externalLinks.medium} target="_blank">
             <FontAwesomeIcon icon={faMedium} />
           </SocialLink>
-          <SocialLink>
+          <SocialLink
+            href={appConsts.externalLinks.stackOverflow}
+            target="_blank"
+          >
             <FontAwesomeIcon icon={faStackOverflow} />
           </SocialLink>
-          <SocialLink>
+          <SocialLink href={appConsts.externalLinks.linkedIn} target="_blank">
             <FontAwesomeIcon icon={faLinkedin} />
           </SocialLink>
-          <SocialLink>
+          <SocialLink href={appConsts.externalLinks.github} target="_blank">
             <FontAwesomeIcon icon={faGithub} />
           </SocialLink>
         </Socials>
