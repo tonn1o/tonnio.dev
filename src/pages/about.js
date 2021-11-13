@@ -46,8 +46,8 @@ const Socials = styled.div`
   display: flex;
   justify-content: space-between;
   font-size: 50px;
-  width: 90%;
-  max-width: 500px;
+  width: 100%;
+  max-width: 700px;
   margin-bottom: 24px;
 `;
 
@@ -68,6 +68,7 @@ const About = () => {
             src={avatar}
             alt="Toni Babenko"
           />
+
           <Text>
             personal blog by <b>Toni Babenko</b>
           </Text>

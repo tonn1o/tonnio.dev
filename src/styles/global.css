@@ -5,13 +5,3 @@
 body {
   margin: 0;
 }
-
-
-/* Styles used for code highlighting in mdx files (https://docs.deckdeckgo.com/?path=/story/components-highlight-code--highlight-code) */
-deckgo-highlight-code {
-  --deckgo-highlight-code-carbon-toolbar-display: none;
-  --deckgo-highlight-code-carbon-overflow: pre;
-  --deckgo-highlight-code-padding: 16px;
-  --deckgo-highlight-code-font-size: 14px;
-  --deckgo-highlight-code-carbon-header-padding: 0;
-}

@@ -11,10 +11,6 @@ const Wrapper = styled.div`
   padding: 0 32px;
   height: 100vh;
   color: ${(props) => props.theme.colors.text};
-
-  a {
-    color: ${(props) => props.theme.colors.accent};
-  }
 `;
 
 const HeaderWrapper = styled.div`
