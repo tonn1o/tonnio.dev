@@ -8,6 +8,7 @@ const Info = styled.div`
   margin: 24px 0 8px;
   font-weight: 600;
   font-size: 14px;
+  color: ${(props) => props.theme.colors.text};
 `;
 
 const Title = styled.div`
@@ -17,6 +18,7 @@ const Title = styled.div`
 
 const Description = styled.div`
   margin: 8px 0;
+  color: ${(props) => props.theme.colors.text};
 `;
 
 const UnderlinedText = styled.span`
@@ -29,7 +31,7 @@ const UnderlinedText = styled.span`
     bottom: 5px;
     width: 0;
     height: 2px;
-    background: #292929;
+    background: ${(props) => props.theme.colors.accent};
     transition: width 0.4s ease;
   }
 `;
@@ -50,9 +52,7 @@ const BlogListItem = ({ title, slug, date, description, timeToRead }) => {
   return (
     <Wrapper to={slug}>
       <Info>
-        <div>
-          {date} | {timeToRead} mins to read
-        </div>
+        {date} | {timeToRead} mins to read
       </Info>
       <Title>
         <UnderlinedText className="underlined-text">{title}</UnderlinedText>

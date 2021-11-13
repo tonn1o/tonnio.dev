@@ -8,9 +8,8 @@ import {
   faMedium,
   faStackOverflow,
 } from "@fortawesome/free-brands-svg-icons";
-import { appConsts } from "../constants";
-import { GatsbyImage, getImage, StaticImage } from "gatsby-plugin-image";
-import { graphql, useStaticQuery } from "gatsby";
+import { appConsts } from "../constants/constants";
+import avatar from "../images/avatar.jpg";
 
 const Wrapper = styled.div`
   margin-top: 96px;
@@ -30,7 +29,7 @@ const PersonalInfo = styled.div`
   top: -68px;
 `;
 
-const Avatar = styled(GatsbyImage)`
+const Avatar = styled.img`
   border-radius: 50%;
   width: 50%;
   max-width: 250px;
@@ -61,30 +60,13 @@ const SocialLink = styled.a`
 `;
 
 const About = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      file(relativePath: { eq: "avatar.jpg" }) {
-        childImageSharp {
-          gatsbyImageData(
-            width: 250
-            placeholder: BLURRED
-            layout: FIXED
-            quality: 100
-          )
-        }
-      }
-    }
-  `);
-
-  const image = getImage(data.file);
-
   return (
     <Layout>
       <Wrapper>
         <PersonalInfo>
           <Avatar
-            image={image}
-            alt="That's my photo here. I look kinda weirdo here."
+            src={avatar}
+            alt="Toni Babenko"
           />
           <Text>
             personal blog by <b>Toni Babenko</b>

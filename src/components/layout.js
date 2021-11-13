@@ -1,6 +1,7 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { ThemeProvider } from "styled-components";
 import Header from "./header";
+import { theme } from "../constants/theme";
 
 const Wrapper = styled.div`
   display: flex;
@@ -9,6 +10,11 @@ const Wrapper = styled.div`
   max-width: 1300px;
   padding: 0 32px;
   height: 100vh;
+  color: ${(props) => props.theme.colors.text};
+
+  a {
+    color: ${(props) => props.theme.colors.accent};
+  }
 `;
 
 const HeaderWrapper = styled.div`
@@ -17,13 +23,15 @@ const HeaderWrapper = styled.div`
 
 const Layout = ({ children }) => {
   return (
-    <Wrapper>
-      <HeaderWrapper>
-        <Header />
-      </HeaderWrapper>
+    <ThemeProvider theme={theme}>
+      <Wrapper>
+        <HeaderWrapper>
+          <Header />
+        </HeaderWrapper>
 
-      {children}
-    </Wrapper>
+        {children}
+      </Wrapper>
+    </ThemeProvider>
   );
 };
 
