@@ -30,7 +30,7 @@ export const BlogList = () => {
     <Wrapper>
       {data.allMdx.nodes.map(
         ({ frontmatter, slug, id, excerpt, timeToRead }) => (
-          <>
+          <div key={id}>
             <HorizontalSeparator />
             <BlogListItem
               title={frontmatter.title}
@@ -38,9 +38,8 @@ export const BlogList = () => {
               date={frontmatter.date}
               description={excerpt}
               timeToRead={timeToRead}
-              key={id}
             />
-          </>
+          </div>
         )
       )}
     </Wrapper>
