@@ -49,12 +49,19 @@ const PostBody = styled.div`
     letter-spacing: 0;
   }
 
+  p code {
+    padding: 0 4px;
+    background: ${(props) => props.theme.colors.grayLighter};
+    color: ${(props) => props.theme.colors.red};
+  }
+
   a {
     color: #448cd4;
     transition: opacity 0.3s;
-    
-    &:hover, &:active {
-      opacity: .7;
+
+    &:hover,
+    &:active {
+      opacity: 0.7;
     }
   }
 `;

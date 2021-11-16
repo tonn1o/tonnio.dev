@@ -12,11 +12,11 @@ const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;
     font-family: Charter, Georgia, serif;
-    color: ${(props) => props.theme.colors.text};;
+    color: ${(props) => props.theme.colors.main};
   }
 
   a {
-    color: ${(props) => props.theme.colors.text};;
+    color: ${(props) => props.theme.colors.main};
   }
 `;
 
