@@ -1,8 +1,24 @@
 import React from "react";
-import styled, { ThemeProvider } from "styled-components";
+import styled, { createGlobalStyle, ThemeProvider } from "styled-components";
 import Header from "./header";
 import { theme } from "../constants/theme";
 import { Helmet } from "react-helmet";
+
+const GlobalStyle = createGlobalStyle`
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    font-family: Charter, Georgia, serif;
+    color: ${(props) => props.theme.colors.text};;
+  }
+
+  a {
+    color: ${(props) => props.theme.colors.text};;
+  }
+`;
 
 const Wrapper = styled.div`
   display: flex;
@@ -11,7 +27,6 @@ const Wrapper = styled.div`
   max-width: 1300px;
   padding: 0 32px;
   height: 100vh;
-  color: ${(props) => props.theme.colors.text};
 `;
 
 const HeaderWrapper = styled.div`
@@ -52,6 +67,7 @@ const Layout = ({ children }) => {
 
         {children}
       </Wrapper>
+      <GlobalStyle />
     </ThemeProvider>
   );
 };

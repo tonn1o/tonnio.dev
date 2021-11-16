@@ -55,7 +55,8 @@ const Socials = styled.div`
 const SocialLink = styled.a`
   transition: opacity 0.3s;
 
-  &:hover {
+  &:hover,
+  &:active {
     opacity: 0.7;
   }
 `;

@@ -22,10 +22,10 @@ const NavLink = styled(Link)`
   text-decoration: none;
   font-weight: 500;
   font-size: 20px;
-  color: ${(props) => props.theme.colors.text};
-
-  &:hover {
-    opacity: 0.7;
+  transition: opacity 0.3s;
+  
+  &:hover, &:active {
+    opacity: .7;
   }
 `;
 

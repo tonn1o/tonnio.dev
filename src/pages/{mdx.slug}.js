@@ -30,15 +30,12 @@ const Info = styled.div`
   margin: 0 auto 8px;
   font-weight: 600;
   font-size: 14px;
-  color: ${(props) => props.theme.colors.text};
 `;
 
-const Body = styled.div`
-  color: ${(props) => props.theme.colors.text};
+const PostBody = styled.div`
   font-size: 20px;
 
   /* Styles used for code highlighting in mdx files (https://docs.deckdeckgo.com/?path=/story/components-highlight-code--highlight-code) */
-
   --deckgo-highlight-code-carbon-toolbar-display: none;
   --deckgo-highlight-code-white-space: pre;
   --deckgo-highlight-code-padding: 24px;
@@ -54,6 +51,11 @@ const Body = styled.div`
 
   a {
     color: #448cd4;
+    transition: opacity 0.3s;
+    
+    &:hover, &:active {
+      opacity: .7;
+    }
   }
 `;
 
@@ -71,9 +73,9 @@ const BlogPost = ({ data }) => {
               {data.mdx.timeToRead > 1 ? "mins" : "min"} to read
             </Info>
           </Header>
-          <Body>
+          <PostBody>
             <MDXRenderer>{data.mdx.body}</MDXRenderer>
-          </Body>
+          </PostBody>
         </Wrapper>
       </Layout>
     </>

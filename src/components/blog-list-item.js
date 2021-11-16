@@ -8,18 +8,15 @@ const Info = styled.div`
   margin: 24px 0 8px;
   font-weight: 600;
   font-size: 14px;
-  color: ${(props) => props.theme.colors.text};
 `;
 
 const Title = styled.div`
   font-size: 34px;
   font-weight: 400;
-  color: ${(props) => props.theme.colors.text};
 `;
 
 const Description = styled.div`
   margin: 8px 0;
-  color: ${(props) => props.theme.colors.text};
   font-size: 18px;
 `;
 
