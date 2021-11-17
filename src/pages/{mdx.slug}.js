@@ -1,88 +1,45 @@
 import * as React from "react";
 import { graphql } from "gatsby";
-import { MDXRenderer } from "gatsby-plugin-mdx";
 import Layout from "../components/layout";
 import styled from "styled-components";
 import { defineCustomElements as deckDeckGoHighlightElement } from "@deckdeckgo/highlight-code/dist/loader";
 import { Helmet } from "react-helmet";
+import PostNavigation from "../components/post-navigation";
+import PostBody from "../components/post-body";
 
 deckDeckGoHighlightElement();
 
 const Wrapper = styled.div`
-  margin: 0 auto 0;
+  margin: 0 auto;
   width: 100%;
-  padding: 0 16px;
   max-width: 680px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 `;
 
-const Header = styled.div`
-  margin-bottom: 64px;
-`;
+const BlogPost = ({ data, pageContext }) => {
+  const postId = pageContext.id;
+  const posts = data.allMdx.nodes;
+  const currentPost = posts.find((post) => post.id === postId);
+  const currentPostIdx = posts.indexOf(currentPost);
 
-const Title = styled.h1`
-  font-size: 40px;
-  font-weight: 400;
-  margin-bottom: 8px;
-`;
+  const prevPost = posts[currentPostIdx - 1] || null;
+  const nextPost = posts[currentPostIdx + 1] || null;
 
-const Info = styled.div`
-  text-transform: uppercase;
-  margin: 0 auto 8px;
-  font-weight: 600;
-  font-size: 14px;
-`;
-
-const PostBody = styled.div`
-  font-size: 20px;
-
-  /* Styles used for code highlighting in mdx files (https://docs.deckdeckgo.com/?path=/story/components-highlight-code--highlight-code) */
-  --deckgo-highlight-code-carbon-toolbar-display: none;
-  --deckgo-highlight-code-white-space: pre;
-  --deckgo-highlight-code-padding: 24px;
-  --deckgo-highlight-code-font-size: 14px;
-  --deckgo-highlight-code-carbon-header-padding: 0;
-
-  p,
-  deckgo-highlight-code {
-    margin-bottom: 32px;
-    line-height: 1.4;
-    letter-spacing: 0;
-  }
-
-  p code {
-    padding: 0 4px;
-    background: ${(props) => props.theme.colors.grayLighter};
-    color: ${(props) => props.theme.colors.red};
-  }
-
-  a {
-    color: #448cd4;
-    transition: opacity 0.3s;
-
-    &:hover,
-    &:active {
-      opacity: 0.7;
-    }
-  }
-`;
-
-const BlogPost = ({ data }) => {
   return (
     <>
-      <Helmet title={data.mdx.frontmatter.title} />
+      <Helmet title={currentPost.frontmatter.title} />
       <Layout>
         <Wrapper>
-          <Header>
-            <Title>{data.mdx.frontmatter.title}</Title>
+          <PostBody
+            body={currentPost.body}
+            timeToRead={currentPost.timeToRead}
+            title={currentPost.frontmatter.title}
+            date={currentPost.frontmatter.date}
+          />
 
-            <Info>
-              {data.mdx.frontmatter.date} | {data.mdx.timeToRead}
-              {data.mdx.timeToRead > 1 ? "mins" : "min"} to read
-            </Info>
-          </Header>
-          <PostBody>
-            <MDXRenderer>{data.mdx.body}</MDXRenderer>
-          </PostBody>
+          <PostNavigation prevPost={prevPost} nextPost={nextPost} />
         </Wrapper>
       </Layout>
     </>
@@ -90,17 +47,16 @@ const BlogPost = ({ data }) => {
 };
 
 export const query = graphql`
-  query ($id: String) {
-    mdx(id: { eq: $id }) {
-      timeToRead
-      body
-      frontmatter {
-        title
-        date(formatString: "MMMM D, YYYY")
-        hero_image {
-          childImageSharp {
-            gatsbyImageData(placeholder: BLURRED)
-          }
+  query {
+    allMdx(sort: { fields: frontmatter___date, order: DESC }) {
+      nodes {
+        id
+        slug
+        timeToRead
+        body
+        frontmatter {
+          title
+          date(formatString: "MMMM D, YYYY")
         }
       }
     }
