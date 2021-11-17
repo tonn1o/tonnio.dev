@@ -5,4 +5,8 @@ export const appConsts = {
     linkedIn: "https://www.linkedin.com/in/a-babenko/",
     medium: "https://medium.com/@tonnio",
   },
+  routes: {
+    root: "/",
+    about: "/about",
+  },
 };

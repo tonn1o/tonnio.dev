@@ -43,7 +43,7 @@ const Body = styled.div`
   }
 
   a {
-    color: #448cd4;
+    color: ${(props) => props.theme.colors.accent};
     transition: opacity 0.3s;
 
     &:hover,

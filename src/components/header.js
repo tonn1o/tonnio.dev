@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import logo from "../images/logo.svg";
 import { Link } from "gatsby";
+import { appConsts } from "../constants/constants";
 
 const Wrapper = styled.div`
   display: flex;
@@ -19,25 +20,25 @@ const Logo = styled.img`
 
 const NavLink = styled(Link)`
   text-transform: lowercase;
-  text-decoration: none;
   font-weight: 500;
   font-size: 20px;
   transition: opacity 0.3s;
-  
-  &:hover, &:active {
-    opacity: .7;
+
+  &:hover,
+  &:active {
+    opacity: 0.7;
   }
 `;
 
 const Header = () => {
   return (
     <Wrapper>
-      <Link to={"/"}>
-        <Logo src={logo} alt="logo" />
+      <Link to={appConsts.routes.root}>
+        <Logo src={logo} alt="tonnio" />
       </Link>
 
       <Nav>
-        <NavLink to={"/about"}>About</NavLink>
+        <NavLink to={appConsts.routes.about}>About</NavLink>
       </Nav>
     </Wrapper>
   );

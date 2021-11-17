@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Link } from "gatsby";
+import { appConsts } from "../constants/constants";
 
 const Wrapper = styled.div`
   display: flex;
@@ -9,8 +10,13 @@ const Wrapper = styled.div`
 `;
 
 const NavItem = styled(Link)`
-  color: #448cd4;
   font-size: 18px;
+  transition: opacity 0.3s;
+
+  &:hover,
+  &:active {
+    opacity: 0.7;
+  }
 `;
 
 const NavItemPrev = styled(NavItem)`
@@ -25,12 +31,12 @@ const PostNavigation = ({ prevPost, nextPost }) => {
   return (
     <Wrapper>
       {prevPost ? (
-        <NavItemPrev to={"/" + prevPost.slug}>
+        <NavItemPrev to={appConsts.routes.root + prevPost.slug}>
           ← {prevPost.frontmatter.title}
         </NavItemPrev>
       ) : null}
       {nextPost ? (
-        <NavItemNext to={"/" + nextPost.slug}>
+        <NavItemNext to={appConsts.routes.root + nextPost.slug}>
           {nextPost.frontmatter.title} →
         </NavItemNext>
       ) : null}
