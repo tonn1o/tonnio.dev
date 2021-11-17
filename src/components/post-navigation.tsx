@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { Link } from "gatsby";
 import { appConsts } from "../constants/constants";
+import { BlogPost } from "src/interfaces/blog-post";
 
 const Wrapper = styled.div`
   display: flex;
@@ -27,7 +28,7 @@ const NavItemNext = styled(NavItem)`
   margin-left: auto;
 `;
 
-const PostNavigation = ({ prevPost, nextPost }) => {
+const PostNavigation = ({ prevPost, nextPost }: PropTypes) => {
   return (
     <Wrapper>
       {prevPost ? (
@@ -45,3 +46,8 @@ const PostNavigation = ({ prevPost, nextPost }) => {
 };
 
 export default PostNavigation;
+
+interface PropTypes {
+  prevPost: Pick<BlogPost, "frontmatter" | "slug">;
+  nextPost: Pick<BlogPost, "frontmatter" | "slug">;
+}

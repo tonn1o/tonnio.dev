@@ -14,7 +14,6 @@ const Wrapper = styled.div`
   max-width: 1300px;
   padding: 0 32px;
   /* mobile viewport bug fix */
-  min-height: 100vh;
   min-height: calc(100vh - calc(100vh - 100%));
   min-height: -webkit-fill-available;
 `;
@@ -23,7 +22,7 @@ const HeaderWrapper = styled.div`
   margin-bottom: 32px;
 `;
 
-const Layout = ({ children }) => {
+const Layout = ({ children }: PropTypes) => {
   return (
     <>
       <Helmet>
@@ -57,6 +56,7 @@ const Layout = ({ children }) => {
           </HeaderWrapper>
 
           {children}
+
         </Wrapper>
       </WrapperOuter>
     </>
@@ -64,3 +64,7 @@ const Layout = ({ children }) => {
 };
 
 export default Layout;
+
+interface PropTypes {
+  children: React.ReactNode;
+}

@@ -47,7 +47,7 @@ const Wrapper = styled(Link)`
   }
 `;
 
-const BlogListItem = ({ title, slug, date, description, timeToRead }) => {
+const BlogListItem = ({ title, slug, date, description, timeToRead }: PropTypes) => {
   return (
     <Wrapper to={slug}>
       <Info>
@@ -62,3 +62,11 @@ const BlogListItem = ({ title, slug, date, description, timeToRead }) => {
 };
 
 export default BlogListItem;
+
+interface PropTypes {
+  title: string;
+  slug: string;
+  date: string;
+  description: string;
+  timeToRead: number;
+}

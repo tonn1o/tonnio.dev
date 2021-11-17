@@ -51,7 +51,7 @@ const Body = styled.div`
   }
 `;
 
-const PostBody = ({ title, timeToRead, date, body }) => {
+const PostBody = ({ title, timeToRead, date, body }: PropTypes) => {
   return (
     <>
       <Header>
@@ -68,3 +68,10 @@ const PostBody = ({ title, timeToRead, date, body }) => {
 };
 
 export default PostBody;
+
+interface PropTypes {
+  title: string;
+  timeToRead: number;
+  date: string;
+  body: string;
+}

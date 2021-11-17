@@ -3,13 +3,15 @@ import { graphql, useStaticQuery } from "gatsby";
 import BlogListItem from "./blog-list-item";
 import styled from "styled-components";
 import HorizontalSeparator from "./horizontal-separator";
+import { AllMdxWrapper } from "../interfaces/mdx";
+import { BlogPost } from "../interfaces/blog-post";
 
 const Wrapper = styled.div`
   width: 100%;
 `;
 
 export const BlogList = () => {
-  const data = useStaticQuery(graphql`
+  const data: AllMdxWrapper<BlogPost[]> = useStaticQuery(graphql`
     query {
       allMdx(sort: { fields: frontmatter___date, order: DESC }) {
         nodes {

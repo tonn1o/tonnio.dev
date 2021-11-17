@@ -1,11 +1,13 @@
 import * as React from "react";
-import { graphql } from "gatsby";
+import { graphql, PageProps } from "gatsby";
 import Layout from "../components/layout";
 import styled from "styled-components";
 import { defineCustomElements as deckDeckGoHighlightElement } from "@deckdeckgo/highlight-code/dist/loader";
 import { Helmet } from "react-helmet";
 import PostNavigation from "../components/post-navigation";
 import PostBody from "../components/post-body";
+import { AllMdxWrapper } from "../interfaces/mdx";
+import { BlogPost as IBlogPost } from "../interfaces/blog-post";
 
 deckDeckGoHighlightElement();
 
@@ -18,7 +20,7 @@ const Wrapper = styled.div`
   flex-direction: column;
 `;
 
-const BlogPost = ({ data, pageContext }) => {
+const BlogPost = ({ data, pageContext }: PropTypes) => {
   const postId = pageContext.id;
   const posts = data.allMdx.nodes;
   const currentPost = posts.find((post) => post.id === postId);
@@ -64,3 +66,6 @@ export const query = graphql`
 `;
 
 export default BlogPost;
+
+interface PropTypes
+  extends PageProps<AllMdxWrapper<IBlogPost[]>, { id: string }> {}

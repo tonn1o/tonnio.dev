@@ -12,6 +12,7 @@ module.exports = {
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
     "gatsby-plugin-styled-components",
+    "gatsby-plugin-root-import",
     {
       resolve: "gatsby-plugin-mdx",
       options: {
@@ -53,14 +54,20 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-gtag`,
       options: {
-        trackingIds: [
-          "G-9XR5144PKV",
-        ],
+        trackingIds: ["G-9XR5144PKV"],
         pluginConfig: {
           head: false,
           respectDNT: true,
           exclude: ["/preview/**", "/do-not-track/me/too/"],
         },
+      },
+    },
+    {
+      resolve: `gatsby-plugin-typescript`,
+      options: {
+        isTSX: true, // defaults to false
+        jsxPragma: `jsx`, // defaults to "React"
+        allExtensions: true, // defaults to false
       },
     },
   ],
