@@ -30,7 +30,7 @@ const UnderlinedText = styled.span`
     bottom: 5px;
     width: 0;
     height: 2px;
-    background: ${(props) => props.theme.colors.main};
+    background: var(--c-cobalt);
     transition: width 0.4s ease;
   }
 `;

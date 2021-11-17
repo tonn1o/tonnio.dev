@@ -1,7 +1,7 @@
 import * as React from "react";
 import Layout from "../components/layout";
 import styled from "styled-components";
-import {Helmet} from "react-helmet";
+import { Helmet } from "react-helmet";
 
 const Wrapper = styled.div`
   display: flex;
@@ -17,12 +17,14 @@ const Message = styled.div`
 
 const NotFoundPage = () => {
   return (
-    <Layout>
-      <Helmet title="404"/>
-      <Wrapper>
-        <Message>404 | (ಥ﹏ಥ)</Message>
-      </Wrapper>
-    </Layout>
+    <>
+      <Helmet title="404" />
+      <Layout>
+        <Wrapper>
+          <Message>404 | (ಥ﹏ಥ)</Message>
+        </Wrapper>
+      </Layout>
+    </>
   );
 };
 

@@ -1,24 +1,7 @@
 import React from "react";
-import styled, { createGlobalStyle, ThemeProvider } from "styled-components";
+import styled from "styled-components";
 import Header from "./header";
-import { theme } from "../constants/theme";
 import { Helmet } from "react-helmet";
-
-const GlobalStyle = createGlobalStyle`
-  * {
-    box-sizing: border-box;
-  }
-
-  body {
-    margin: 0;
-    font-family: Charter, Georgia, serif;
-    color: ${(props) => props.theme.colors.main};
-  }
-
-  a {
-    color: ${(props) => props.theme.colors.main};
-  }
-`;
 
 const Wrapper = styled.div`
   display: flex;
@@ -35,7 +18,7 @@ const HeaderWrapper = styled.div`
 
 const Layout = ({ children }) => {
   return (
-    <ThemeProvider theme={theme}>
+    <>
       <Helmet>
         <link
           rel="apple-touch-icon"
@@ -67,8 +50,7 @@ const Layout = ({ children }) => {
 
         {children}
       </Wrapper>
-      <GlobalStyle />
-    </ThemeProvider>
+    </>
   );
 };
 

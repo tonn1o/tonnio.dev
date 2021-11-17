@@ -38,12 +38,12 @@ const Body = styled.div`
 
   p code {
     padding: 0 4px;
-    background: ${(props) => props.theme.colors.grayLighter};
-    color: ${(props) => props.theme.colors.red};
+    background: var(--c-gray-lighter);
+    color: var(--c-red);
   }
 
   a {
-    color: ${(props) => props.theme.colors.accent};
+    color: var(--c-sky-blue);
     transition: opacity 0.3s;
 
     &:hover,

@@ -1,0 +1,13 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Charter, Georgia, serif;
+    color: var(--c-text-primary);
+}
+
+a {
+    color: var(--c-text-primary);
+}
