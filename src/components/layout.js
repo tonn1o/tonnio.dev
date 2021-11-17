@@ -3,17 +3,24 @@ import styled from "styled-components";
 import Header from "./header";
 import { Helmet } from "react-helmet";
 
+const WrapperOuter = styled.div`
+  height: 100vh;
+`;
+
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   margin: 0 auto;
   max-width: 1300px;
   padding: 0 32px;
-  height: 100vh;
+  /* mobile viewport bug fix */
+  min-height: 100vh;
+  min-height: calc(100vh - calc(100vh - 100%));
+  min-height: -webkit-fill-available;
 `;
 
 const HeaderWrapper = styled.div`
-  margin-bottom: 64px;
+  margin-bottom: 32px;
 `;
 
 const Layout = ({ children }) => {
@@ -43,13 +50,15 @@ const Layout = ({ children }) => {
         <meta name="theme-color" content="#ffffff" />
       </Helmet>
 
-      <Wrapper>
-        <HeaderWrapper>
-          <Header />
-        </HeaderWrapper>
+      <WrapperOuter>
+        <Wrapper>
+          <HeaderWrapper>
+            <Header />
+          </HeaderWrapper>
 
-        {children}
-      </Wrapper>
+          {children}
+        </Wrapper>
+      </WrapperOuter>
     </>
   );
 };
