@@ -6,7 +6,7 @@ import { defineCustomElements as deckDeckGoHighlightElement } from "@deckdeckgo/
 import { Helmet } from "react-helmet";
 import PostNavigation from "../components/post-navigation";
 import PostBody from "../components/post-body";
-import { AllMdxWrapper } from "../interfaces/mdx";
+import { AllMdxWrapper } from "@/interfaces/mdx";
 import { BlogPost as IBlogPost } from "../interfaces/blog-post";
 
 deckDeckGoHighlightElement();

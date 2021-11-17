@@ -8,7 +8,7 @@ import {
   faMedium,
   faStackOverflow,
 } from "@fortawesome/free-brands-svg-icons";
-import { appConsts } from "../constants/constants";
+import { appConsts } from "@/constants/constants";
 import avatar from "../images/avatar.jpg";
 import { Helmet } from "react-helmet";
 
@@ -27,7 +27,7 @@ const PersonalInfo = styled.div`
   flex-direction: column;
   width: 100%;
   position: relative;
-  top: -68px;
+  top: -48px;
 `;
 
 const Avatar = styled.img`

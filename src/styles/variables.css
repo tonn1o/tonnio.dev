@@ -17,4 +17,7 @@
   --fs-description: 0.9rem;
   --fs-nav-link: 0.9rem;
   --fs-code: 0.7rem;
+
+  /* Misc */
+  --header-height: 50px;
 }

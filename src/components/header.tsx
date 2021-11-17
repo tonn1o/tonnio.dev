@@ -2,12 +2,13 @@ import React from "react";
 import styled from "styled-components";
 import logo from "../images/logo.svg";
 import { Link } from "gatsby";
-import { appConsts } from "../constants/constants";
+import { appConsts } from "@/constants/constants";
 
 const Wrapper = styled.div`
   display: flex;
   padding-top: 16px;
   align-items: flex-end;
+  height: var(--header-height);
 `;
 
 const Nav = styled.div`
