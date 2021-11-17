@@ -7,17 +7,17 @@ const Info = styled.div`
   text-transform: uppercase;
   margin: 24px 0 8px;
   font-weight: 600;
-  font-size: 14px;
+  font-size: var(--fs-subtitle);
 `;
 
 const Title = styled.div`
-  font-size: 34px;
+  font-size: var(--fs-h2);
   font-weight: 400;
 `;
 
 const Description = styled.div`
   margin: 8px 0;
-  font-size: 18px;
+  font-size: var(--fs-description);
 `;
 
 const UnderlinedText = styled.span`

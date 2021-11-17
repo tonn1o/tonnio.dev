@@ -6,4 +6,15 @@
   --c-gray: #8d8d94;
   --c-red: #ed143d;
   --c-text-primary: var(--c-cobalt);
+
+  /* Font sizes */
+  --fs-root: 20px;
+  --fs-text: 1rem;
+  --fs-h1: 2rem;
+  --fs-h2: 1.7rem;
+  --fs-text-large: 2.5rem;
+  --fs-subtitle: 0.7rem;
+  --fs-description: 0.9rem;
+  --fs-nav-link: 0.9rem;
+  --fs-code: 0.7rem;
 }

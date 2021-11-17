@@ -38,7 +38,6 @@ const Avatar = styled.img`
 
 const Text = styled.p`
   margin-top: 32px;
-  font-size: 20px;
   text-align: center;
 `;
 
@@ -46,7 +45,7 @@ const Socials = styled.div`
   margin-top: auto;
   display: flex;
   justify-content: space-between;
-  font-size: 50px;
+  font-size: var(--fs-text-large);
   width: 100%;
   max-width: 700px;
   margin-bottom: 24px;

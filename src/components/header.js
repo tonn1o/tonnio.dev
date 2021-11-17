@@ -21,8 +21,8 @@ const Logo = styled.img`
 const NavLink = styled(Link)`
   text-transform: lowercase;
   font-weight: 500;
-  font-size: 20px;
   transition: opacity 0.3s;
+  font-size: var(--fs-nav-link);
 
   &:hover,
   &:active {

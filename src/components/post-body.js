@@ -7,7 +7,7 @@ const Header = styled.div`
 `;
 
 const Title = styled.h1`
-  font-size: 40px;
+  font-size: var(--fs-h1);
   font-weight: 400;
   margin-bottom: 8px;
 `;
@@ -16,17 +16,15 @@ const Info = styled.div`
   text-transform: uppercase;
   margin: 0 auto 8px;
   font-weight: 600;
-  font-size: 14px;
+  font-size: var(--fs-subtitle);
 `;
 
 const Body = styled.div`
-  font-size: 20px;
-
   /* Styles used for code highlighting in mdx files (https://docs.deckdeckgo.com/?path=/story/components-highlight-code--highlight-code) */
   --deckgo-highlight-code-carbon-toolbar-display: none;
   --deckgo-highlight-code-white-space: pre;
   --deckgo-highlight-code-padding: 24px;
-  --deckgo-highlight-code-font-size: 14px;
+  --deckgo-highlight-code-font-size: var(--fs-code);
   --deckgo-highlight-code-carbon-header-padding: 0;
 
   p,

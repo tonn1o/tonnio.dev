@@ -10,7 +10,7 @@ const Wrapper = styled.div`
 `;
 
 const NavItem = styled(Link)`
-  font-size: 18px;
+  font-size: var(--fs-nav-link);
   transition: opacity 0.3s;
 
   &:hover,

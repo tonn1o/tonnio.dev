@@ -12,7 +12,7 @@ const Wrapper = styled.div`
 
 const Message = styled.div`
   margin-top: -100px;
-  font-size: 48px;
+  font-size: var(--fs-text-large);
 `;
 
 const NotFoundPage = () => {
