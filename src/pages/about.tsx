@@ -8,7 +8,7 @@ import {
   faMedium,
   faStackOverflow,
 } from "@fortawesome/free-brands-svg-icons";
-import { appConsts } from "@/constants/constants";
+import { appConsts } from "src/constants/constants";
 import avatar from "../images/avatar.jpg";
 import { Helmet } from "react-helmet";
 
