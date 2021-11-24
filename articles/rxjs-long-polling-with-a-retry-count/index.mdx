@@ -1,6 +1,6 @@
 ---
 title: "RxJS Long Polling with a Retry Count"
-description: "An example of creating a long polling process using RxJS library."
+description: "Creating a long polling process using RxJS library"
 date: "2021-11-24"
 ---
 
@@ -14,7 +14,7 @@ requestData(): Observable<HttpResponse<...>> {
 }
 ```
 
-We would like to request data at a specific interval. Additionally, if server responds with an error few times in a row, we would like to break the polling process (e.g server is down). Here comes the solution:
+We would like to request data at a specific interval. Additionally, if the server responds with an error a few times in a row, we would like to break the polling process (e.g server is down). Here comes the solution:
 
 ```typescript
 startPolling(requestInterval = 1000, retryCount = 5) {
@@ -34,10 +34,10 @@ The `startPolling` method is going to do polling every `1000` ms. If the process
 
 Now let’s take the RxJS flow apart.
 
-`timer(0, requestInterval)`  – first we initiate interval using `timer` . The `timer` operator will emit a value every `requestInterval` (in our example it is 1000ms).
+`timer(0, requestInterval)`  – first, we initiate the interval using `timer` . The `timer` operator will emit a value every `requestInterval` (in our example it is 1000ms).
 
 `concatMap(() => this.requestData())`  – after we get a value from the `timer` we need to map the value into request. For that, we use `concatMap`. It works the same as the `mergeMap` operator but with one critical difference. It will not subscribe to the next observable until the previous one will be completed. It will help us to keep a strict order of our requests. So the situation when the previous request gets finished after the next one is not possible.
 
-`retryWhen((error$) => error$.pipe(...` – if we encounter an error within our polling process, then using the `retryWhen` operator we try to send the same request again (it will send the same parameters and metadata as well). It will do the retry with a  `delay`  of  `requestInterval`. And to limit the number of attempts we use `take` operator, which will take only a certain amount of failed requests (in our case 5). After that, the polling process will be completed.
+`retryWhen((error$) => error$.pipe(...` – if we encounter an error within our polling process, then using the `retryWhen` operator we try to send the same request again (it will send the same parameters and metadata as well). It will do the retry with a  `delay`  of  `requestInterval`. And to limit the number of attempts we use the `take` operator, which will take only a certain amount of failed requests (in our case 5). After that, the polling process will be completed.
 
 If you need to provide some additional error handling, you can do that within `error$.pipe`.
