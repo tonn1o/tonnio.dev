@@ -26,7 +26,7 @@ const Body = styled.div`
   --deckgo-highlight-code-padding: 24px;
   --deckgo-highlight-code-font-size: var(--fs-code);
   --deckgo-highlight-code-carbon-header-padding: 0;
-  --deckgo-highlight-code-margin: 0
+  --deckgo-highlight-code-margin: 0;
 
   p,
   deckgo-highlight-code {
