@@ -41,7 +41,7 @@ const Body = styled.div`
   p code {
     padding: 0 0.2em;
     background: var(--c-code-bg);
-    font-size: 0.85em;
+    font-size: 0.8em;
     border-radius: 4px;
     font-family: Consolas, Menlo, Courier, monospace;
   }
