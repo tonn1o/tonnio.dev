@@ -21,24 +21,29 @@ const Info = styled.div`
 
 const Body = styled.div`
   /* Styles used for code highlighting in mdx files (https://docs.deckdeckgo.com/?path=/story/components-highlight-code--highlight-code) */
-  --deckgo-highlight-code-carbon-toolbar-display: none;
-  --deckgo-highlight-code-white-space: pre;
-  --deckgo-highlight-code-padding: 24px;
-  --deckgo-highlight-code-font-size: var(--fs-code);
-  --deckgo-highlight-code-carbon-header-padding: 0;
-  --deckgo-highlight-code-margin: 0;
-
   p,
   deckgo-highlight-code {
     margin-bottom: 32px;
     line-height: 1.4;
     letter-spacing: 0;
+
+    --deckgo-highlight-code-token-atrule: var(--c-purple);
+    --deckgo-highlight-code-carbon-toolbar-display: none;
+    --deckgo-highlight-code-white-space: pre;
+    --deckgo-highlight-code-padding: 24px;
+    --deckgo-highlight-code-font-size: var(--fs-code);
+    --deckgo-highlight-code-carbon-header-padding: 0;
+    --deckgo-highlight-code-margin: 0;
+    --deckgo-highlight-code-background: var(--c-code-bg);
+    --deckgo-highlight-code-carbon-box-shadow: 0;
   }
 
   p code {
-    padding: 0 4px;
-    background: var(--c-gray-lighter);
-    color: var(--c-red);
+    padding: 0 0.2em;
+    background: var(--c-code-bg);
+    font-size: 0.85em;
+    border-radius: 4px;
+    font-family: Consolas, Menlo, Courier, monospace;
   }
 
   a {

@@ -2,9 +2,10 @@
   /* Colors */
   --c-cobalt: #292929;
   --c-sky-blue: #448cd4;
-  --c-gray-lighter: #f1f2f3;
   --c-gray: #8d8d94;
   --c-red: #ed143d;
+  --c-purple: #7c4dff;
+  --c-code-bg: #ebebec;
   --c-text-primary: var(--c-cobalt);
 
   /* Font sizes */

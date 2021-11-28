@@ -22,9 +22,9 @@ startPolling(requestInterval = 1000, retryCount = 5) {
     .pipe(
       concatMap(() => this.requestData()),
       retryWhen((error$) => error$.pipe(
-			delay(requestInterval),
-			take(retryCount))
-		),
+        delay(requestInterval),
+        take(retryCount))
+      ),
     )
     .subscribe((res) => ...);
 }
