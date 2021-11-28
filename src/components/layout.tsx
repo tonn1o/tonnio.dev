@@ -3,6 +3,7 @@ import styled from "styled-components";
 import Header from "./header";
 import { Helmet } from "react-helmet";
 import openGraphImage from "../images/open-graph.jpg";
+import { useLocation } from "@reach/router";
 
 const WrapperOuter = styled.div`
   height: 100vh;
@@ -24,6 +25,8 @@ const HeaderWrapper = styled.div`
 `;
 
 const Layout = ({ children, metaTitle }: PropTypes) => {
+  const currentUrl = useLocation().href;
+
   return (
     <>
       <Helmet title={metaTitle}>
@@ -53,7 +56,7 @@ const Layout = ({ children, metaTitle }: PropTypes) => {
         <meta property="og:title" content={metaTitle} />
         <meta property="og:type" content="website" />
         <meta property="og:image" content={openGraphImage} />
-        <meta property="og:url" content={window.location.href} />
+        <meta property="og:url" content={currentUrl} />
       </Helmet>
 
       <WrapperOuter>
