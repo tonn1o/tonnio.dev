@@ -11,6 +11,7 @@ import {
 import { appConsts } from "src/constants/constants";
 import avatar from "../images/avatar.jpg";
 import { Helmet } from "react-helmet";
+import { faPodcast } from '@fortawesome/free-solid-svg-icons';
 
 const Wrapper = styled.div`
   margin-top: 96px;
@@ -89,6 +90,9 @@ const About = () => {
             </SocialLink>
             <SocialLink href={appConsts.externalLinks.github} target="_blank">
               <FontAwesomeIcon icon={faGithub} />
+            </SocialLink>
+            <SocialLink href={appConsts.externalLinks.podcast} target="_blank">
+              <FontAwesomeIcon icon={faPodcast} />
             </SocialLink>
           </Socials>
         </Wrapper>
