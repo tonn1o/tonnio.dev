@@ -3,11 +3,11 @@ import { graphql, PageProps } from "gatsby";
 import Layout from "../components/layout";
 import styled from "styled-components";
 import { defineCustomElements as deckDeckGoHighlightElement } from "@deckdeckgo/highlight-code/dist/loader";
-import { Helmet } from "react-helmet";
 import PostNavigation from "../components/post-navigation";
 import PostBody from "../components/post-body";
 import { AllMdxWrapper } from "@/interfaces/mdx";
 import { BlogPost as IBlogPost } from "../interfaces/blog-post";
+import { Helmet } from "react-helmet";
 
 deckDeckGoHighlightElement();
 
@@ -31,8 +31,14 @@ const BlogPost = ({ data, pageContext }: PropTypes) => {
 
   return (
     <>
-      <Helmet title={currentPost.frontmatter.title} />
-      <Layout>
+      <Layout metaTitle={currentPost.frontmatter.title}>
+        <Helmet>
+          <meta property="og:type" content="article" />
+          <meta
+            property="article:published_time"
+            content={currentPost.frontmatter.date}
+          />
+        </Helmet>
         <Wrapper>
           <PostBody
             body={currentPost.body}

@@ -10,8 +10,7 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { appConsts } from "src/constants/constants";
 import avatar from "../images/avatar.jpg";
-import { Helmet } from "react-helmet";
-import { faPodcast } from '@fortawesome/free-solid-svg-icons';
+import { faPodcast } from "@fortawesome/free-solid-svg-icons";
 
 const Wrapper = styled.div`
   margin-top: 96px;
@@ -64,8 +63,7 @@ const SocialLink = styled.a`
 const About = () => {
   return (
     <>
-      <Helmet title="about" />
-      <Layout>
+      <Layout metaTitle="about">
         <Wrapper>
           <PersonalInfo>
             <Avatar src={avatar} alt="Toni Babenko" />
