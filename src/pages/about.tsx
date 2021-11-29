@@ -63,7 +63,7 @@ const SocialLink = styled.a`
 const About = () => {
   return (
     <>
-      <Layout metaTitle="about">
+      <Layout metaTitle="about" metaDescription="Personal blog by Toni Babenko">
         <Wrapper>
           <PersonalInfo>
             <Avatar src={avatar} alt="Toni Babenko" />

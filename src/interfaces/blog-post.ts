@@ -4,6 +4,7 @@ export interface BlogPost {
   excerpt: string;
   timeToRead: number;
   body: string;
+  excerpts: string;
   frontmatter: {
     title: string;
     date: string;

@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import Header from "./header";
 import { Helmet } from "react-helmet";
-import openGraphImage from "../images/open-graph.jpg";
 import { useLocation } from "@reach/router";
 
 const WrapperOuter = styled.div`
@@ -24,8 +23,8 @@ const HeaderWrapper = styled.div`
   margin-bottom: 32px;
 `;
 
-const Layout = ({ children, metaTitle }: PropTypes) => {
-  const currentUrl = useLocation().href;
+const Layout = ({ children, metaTitle, metaDescription }: PropTypes) => {
+  const { href, host } = useLocation();
 
   return (
     <>
@@ -49,14 +48,16 @@ const Layout = ({ children, metaTitle }: PropTypes) => {
         />
         <link rel="manifest" href="/site.webmanifest" />
         <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
+
         <meta name="msapplication-TileColor" content="#da532c" />
         <meta name="theme-color" content="#ffffff" />
-
+        <meta name="description" content={metaDescription} />
         <meta property="og:locale" content="en_US" />
         <meta property="og:title" content={metaTitle} />
+        <meta property="og:description" content={metaDescription} />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content={openGraphImage} />
-        <meta property="og:url" content={currentUrl} />
+        <meta property="og:image" content={host + "/open-graph.jpg"} />
+        <meta property="og:url" content={href} />
       </Helmet>
 
       <WrapperOuter>
@@ -77,4 +78,5 @@ export default Layout;
 interface PropTypes {
   children: React.ReactNode;
   metaTitle: string;
+  metaDescription: string;
 }

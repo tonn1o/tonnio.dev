@@ -31,7 +31,10 @@ const BlogPost = ({ data, pageContext }: PropTypes) => {
 
   return (
     <>
-      <Layout metaTitle={currentPost.frontmatter.title}>
+      <Layout
+        metaTitle={currentPost.frontmatter.title}
+        metaDescription={currentPost.excerpt}
+      >
         <Helmet>
           <meta property="og:type" content="article" />
           <meta
@@ -62,6 +65,7 @@ export const query = graphql`
         slug
         timeToRead
         body
+        excerpt
         frontmatter {
           title
           date(formatString: "MMMM D, YYYY")

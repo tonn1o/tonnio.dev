@@ -5,7 +5,10 @@ import { BlogList } from "../components/blog-list";
 const IndexPage = () => {
   return (
     <>
-      <Layout metaTitle="tonnio">
+      <Layout
+        metaTitle="tonnio"
+        metaDescription="Personal blog by Toni Babenko"
+      >
         <BlogList />
       </Layout>
     </>
