@@ -24,7 +24,7 @@ const HeaderWrapper = styled.div`
 `;
 
 const Layout = ({ children, metaTitle, metaDescription }: PropTypes) => {
-  const { href, host } = useLocation();
+  const { href, origin } = useLocation();
 
   return (
     <>
@@ -56,7 +56,7 @@ const Layout = ({ children, metaTitle, metaDescription }: PropTypes) => {
         <meta property="og:title" content={metaTitle} />
         <meta property="og:description" content={metaDescription} />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content={host + "/open-graph.jpg"} />
+        <meta property="og:image" content={origin + "/open-graph.jpg"} />
         <meta property="og:url" content={href} />
       </Helmet>
 
