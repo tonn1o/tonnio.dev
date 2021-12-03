@@ -7,7 +7,7 @@ date: "2021-12-03"
 ![Don't use Redux and NgRx](./hero.jpg)
 
 **Remark 1:**
-In this article, when I address “store” I usually mean “Flux architecture” and its implementation represented by Redux.
+In this article, when I say "store" I refer to the "Flux architecture" and its implementation represented by Redux.
 
 **Remark 2:**
 The article is not dedicated to any specific Front-End framework/library. Arguments stated here may be applied to React as well as to Angular and other modern Front-End tools.
@@ -49,8 +49,6 @@ Let’s outline a few examples of when the usage of Store will be justified and 
 
 ❌ Data is used only on one page and not going to be reused.  
 ❌ We need to pass data to a child component.
-
-![good and bad practice](./scheme.jpg)
 
 ## Conclusion
 Before creating another domain in your Store stop and ask yourself the next questions: **“Is the data going to be reused elsewhere?”**, **”Can I use here local state instead?”**, and **“Does the store usage here contribute to a better app’s architecture?”**. Honest answers to these questions will help you to make a better decision in any particular case.
