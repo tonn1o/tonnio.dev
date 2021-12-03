@@ -59,7 +59,6 @@ const Layout = ({ children, metaTitle, metaDescription }: PropTypes) => {
         <meta property="og:type" content="website" />
         <meta property="og:image" content={origin + "/open-graph.jpg"} />
         <meta property="og:url" content={href} />
-        <script src="https://platform.twitter.com/widgets.js" charSet="utf-8"/>
       </Helmet>
 
       <WrapperOuter>

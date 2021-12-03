@@ -1,6 +1,8 @@
 import React from "react";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import styled from "styled-components";
+import { Tweet } from "react-twitter-widgets";
+import { MDXProvider } from "@mdx-js/react";
 
 const Header = styled.div`
   margin-bottom: 32px;
@@ -85,7 +87,9 @@ const PostBody = ({ title, timeToRead, date, body }: PropTypes) => {
         </Info>
       </Header>
       <Body>
-        <MDXRenderer>{body}</MDXRenderer>
+        <MDXProvider components={{ Tweet }}>
+          <MDXRenderer>{body}</MDXRenderer>
+        </MDXProvider>
       </Body>
     </>
   );

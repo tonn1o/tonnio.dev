@@ -38,7 +38,7 @@ The points above sound pretty reasonable, right? But it's not that simple. Every
 ## When should I use Store?
 We already discussed the main advantages and tradeoffs of using Store. Now let’s talk about when is the right time to use it and when not. If I was asked to answer this question within 280 characters, I would show you this Dan Abramov’s (creator of Redux) tweet:
 
-<blockquote class="twitter-tweet"><p lang="en" dir="ltr">I don’t like Redux very much, but this sounds like the opposite of its problems? With Redux, you *do* know deterministically where the code lies because you can follow the reducer chain. The problem is that what should’ve been local often becomes global.</p>&mdash; Dan (@dan_abramov) <a href="https://twitter.com/dan_abramov/status/1241756566048694272?ref_src=twsrc%5Etfw">March 22, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<Tweet tweetId="1241756566048694272"></Tweet>
 
 As it follows from this tweet, the main problem with Store is that it is often used in places where it’s not required. In many projects, I saw a situation where developers mindlessly were extending the app’s Store not asking themselves if it is necessary in this particular case. As we discussed above, such a reckless way of using the store leads to increased code update complexity and a bigger amount of boilerplate code. You can avoid it by simply *using the store in places where it’s justified to use, and in the rest of the cases use the component’s local state instead*.
 
