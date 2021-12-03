@@ -48,7 +48,8 @@ const Layout = ({ children, metaTitle, metaDescription }: PropTypes) => {
         />
         <link rel="manifest" href="/site.webmanifest" />
         <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
-
+        <meta name="twitter:widgets:theme" content="light" />
+        <meta name="twitter:widgets:border-color" content="#55acee" />
         <meta name="msapplication-TileColor" content="#da532c" />
         <meta name="theme-color" content="#ffffff" />
         <meta name="description" content={metaDescription} />
@@ -58,6 +59,7 @@ const Layout = ({ children, metaTitle, metaDescription }: PropTypes) => {
         <meta property="og:type" content="website" />
         <meta property="og:image" content={origin + "/open-graph.jpg"} />
         <meta property="og:url" content={href} />
+        <script src="https://platform.twitter.com/widgets.js" charSet="utf-8"/>
       </Helmet>
 
       <WrapperOuter>

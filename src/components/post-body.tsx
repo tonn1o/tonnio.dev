@@ -21,9 +21,9 @@ const Info = styled.div`
 
 const Body = styled.div`
   /* Styles used for code highlighting in mdx files (https://docs.deckdeckgo.com/?path=/story/components-highlight-code--highlight-code) */
+
   p,
   deckgo-highlight-code {
-    margin-bottom: 32px;
     line-height: 1.4;
     letter-spacing: 0;
 
@@ -38,7 +38,25 @@ const Body = styled.div`
     --deckgo-highlight-code-carbon-box-shadow: 0;
   }
 
-  p code {
+  p,
+  deckgo-highlight-code,
+  ul {
+    margin-top: 0;
+    margin-bottom: 32px;
+  }
+
+  h1,
+  h2,
+  h3 {
+    margin-top: 0;
+    margin-bottom: 16px;
+  }
+
+  .twitter-tweet {
+    margin: 0 auto 32px !important;
+  }
+
+  code:not(.container) {
     padding: 0 0.2em;
     background: var(--c-code-bg);
     font-size: 0.8em;
