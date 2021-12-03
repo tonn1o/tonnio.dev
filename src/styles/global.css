@@ -8,6 +8,10 @@ html {
   color: var(--c-text-primary);
 }
 
+code {
+  font-family: Consolas, Menlo, Courier, monospace;
+}
+
 body {
   margin: 0;
 }

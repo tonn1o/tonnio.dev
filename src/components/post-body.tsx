@@ -1,8 +1,8 @@
 import React from "react";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import styled from "styled-components";
-import { Tweet } from "react-twitter-widgets";
 import { MDXProvider } from "@mdx-js/react";
+import TwitterCard from "../components/twitter-card";
 
 const Header = styled.div`
   margin-bottom: 32px;
@@ -22,23 +22,8 @@ const Info = styled.div`
 `;
 
 const Body = styled.div`
-  /* Styles used for code highlighting in mdx files (https://docs.deckdeckgo.com/?path=/story/components-highlight-code--highlight-code) */
-
-  p,
-  deckgo-highlight-code {
-    line-height: 1.4;
-    letter-spacing: 0;
-
-    --deckgo-highlight-code-token-atrule: var(--c-purple);
-    --deckgo-highlight-code-carbon-toolbar-display: none;
-    --deckgo-highlight-code-white-space: pre;
-    --deckgo-highlight-code-padding: 24px;
-    --deckgo-highlight-code-font-size: var(--fs-code);
-    --deckgo-highlight-code-carbon-header-padding: 0;
-    --deckgo-highlight-code-margin: 0;
-    --deckgo-highlight-code-background: var(--c-code-bg);
-    --deckgo-highlight-code-carbon-box-shadow: 0;
-  }
+  line-height: 1.4;
+  letter-spacing: 0;
 
   p,
   deckgo-highlight-code,
@@ -54,16 +39,15 @@ const Body = styled.div`
     margin-bottom: 16px;
   }
 
-  .twitter-tweet {
-    margin: 0 auto 32px !important;
+  hr {
+    margin: 32px 0;
   }
 
   code:not(.container) {
-    padding: 0 0.2em;
-    background: var(--c-code-bg);
-    font-size: 0.8em;
+    padding: 0.125em 4px;
+    font-size: 0.75em;
     border-radius: 4px;
-    font-family: Consolas, Menlo, Courier, monospace;
+    background: var(--c-code-bg);
   }
 
   a {
@@ -87,7 +71,7 @@ const PostBody = ({ title, timeToRead, date, body }: PropTypes) => {
         </Info>
       </Header>
       <Body>
-        <MDXProvider components={{ Tweet }}>
+        <MDXProvider components={{ TwitterCard }}>
           <MDXRenderer>{body}</MDXRenderer>
         </MDXProvider>
       </Body>
