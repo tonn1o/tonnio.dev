@@ -59,6 +59,22 @@ const Body = styled.div`
       opacity: 0.7;
     }
   }
+
+  blockquote {
+    position: relative;
+    margin-left: 0;
+    padding-left: 32px;
+    
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: -3px;
+      width: 3px;
+      height: calc(100% + 6px);
+      background: var(--c-cobalt);
+    }
+  }
 `;
 
 const PostBody = ({ title, timeToRead, date, body }: PropTypes) => {

@@ -13,6 +13,7 @@ const Wrapper = styled.div`
 const NavItem = styled(Link)`
   font-size: var(--fs-nav-link);
   transition: opacity 0.3s;
+  width: 45%;
 
   &:hover,
   &:active {
@@ -26,6 +27,7 @@ const NavItemPrev = styled(NavItem)`
 
 const NavItemNext = styled(NavItem)`
   margin-left: auto;
+  text-align: right;
 `;
 
 const PostNavigation = ({ prevPost, nextPost }: PropTypes) => {
