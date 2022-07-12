@@ -20,21 +20,6 @@ const Description = styled.div`
   font-size: var(--fs-description);
 `;
 
-const UnderlinedText = styled.span`
-  position: relative;
-
-  &:before {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 5px;
-    width: 0;
-    height: 2px;
-    background: var(--c-cobalt);
-    transition: width 0.4s ease;
-  }
-`;
-
 const Wrapper = styled(Link)`
   min-height: 160px;
   display: flex;
@@ -42,8 +27,8 @@ const Wrapper = styled(Link)`
   text-decoration: none;
   position: relative;
 
-  &:hover .underlined-text::before {
-    width: 100%;
+  &:hover .title-text {
+    text-decoration: underline;
   }
 `;
 
@@ -53,8 +38,8 @@ const BlogListItem = ({ title, slug, date, description, timeToRead }: PropTypes)
       <Info>
         {date} | {timeToRead} mins to read
       </Info>
-      <Title>
-        <UnderlinedText className="underlined-text">{title}</UnderlinedText>
+      <Title className="title-text">
+        {title}
       </Title>
       <Description>{description}</Description>
     </Wrapper>
